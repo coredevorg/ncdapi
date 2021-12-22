@@ -6,6 +6,12 @@ apikey=YOUR_API_KEY
 apipw=YOUR_API_PASSWORD
 cid=YOUR_CUSTOMERNUMBER
 
+# source credentials from configuration file
+for cfg in ""$HOME"/.ncdapi.cfg $HOME"/.local/etc/ncdapi.cfg "$HOME"/etc/ncdapi.cfg  /etc/ncdapi.cfg "$(dirname $(realpath $0))"/ncdapi.cfg
+do
+	[ -f "$cfg" ] && { source "$cfg" ; break ; }
+done
+
 end="https://ccp.netcup.net/run/webservice/servers/endpoint.php?JSON"
 client=""
 debug=false
