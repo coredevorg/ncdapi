@@ -7,7 +7,8 @@ apipw=YOUR_API_PASSWORD
 cid=YOUR_CUSTOMERNUMBER
 
 # source credentials from configuration file
-for cfg in ""$HOME"/.ncdapi.cfg $HOME"/.local/etc/ncdapi.cfg "$HOME"/etc/ncdapi.cfg  /etc/ncdapi.cfg "$(dirname $(realpath $0))"/ncdapi.cfg
+for cfg in	"$HOME"/.ncdapi "$HOME"/.local/etc/ncdapi.cfg "$HOME"/etc/ncdapi.cfg  /etc/ncdapi.cfg \
+			"$(dirname $(realpath $0))"/.ncdapi "$(dirname $(realpath $0))"/ncdapi.cfg
 do
 	[ -f "$cfg" ] && { source "$cfg" ; break ; }
 done
